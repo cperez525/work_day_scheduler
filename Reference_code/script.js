@@ -8,7 +8,11 @@ for (h = 0; h < workHours.length; h++) {
 
     console.log(workHours[h])
     $(".container").append(blockRow)
+
     hourBlock.text(workHours[h])
+
     timeBlock.attr("data-log", workHours[h])
+
+    saveBtn.append("<img>").attr("src", "Images/save_icon.png")
     blockRow.append(hourBlock, timeBlock, saveBtn)
 }
