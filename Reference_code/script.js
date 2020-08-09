@@ -14,6 +14,7 @@ for (h = 0; h < workHours.length; h++) {
     hourBlock.append(hourText.text(workHours[h]))
 
     blockRow.attr("data-log", workHours[h])
+    timeBlock.attr("data-name", workHours[h])
 
 
     blockRow.append(hourBlock, timeBlock, saveBtn)
@@ -21,4 +22,10 @@ for (h = 0; h < workHours.length; h++) {
 
 $(".saveBtn").on("click", function() {
     
+    var storeKey = $(this).prev().attr("data-name")
+    var storeVal = $(this).prev().val()
+    
+    console.log(storeKey, storeVal)
+
+    localStorage.setItem(storeKey, storeVal)
 })
