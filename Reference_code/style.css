@@ -28,37 +28,47 @@ textarea{
 .time-block{
   text-align: center;
   width: 80%;
+  border: 1px solid black;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  margin-bottom: .6%;
+  justify-content: center;
 }
 
 .hour {
-  line-height: 300%;
   text-align: center;
-  font-weight: 900;
   background-color: #ffffff;
   color: #000000;
-  border-top: 1px dashed #000000;
+  border: 1px solid #000000;
   width: 10%;
+  overflow-wrap: break-word;
+}
+
+.hour-text {
+  margin-top: 30%;
+  margin-bottom: 30%;
+  font-weight: 900;
+}
+
+.past, .present, .future {
+  color: white;
+  text-emphasis: 900;
 }
 
 .past {
   background-color: #d3d3d3;
-  color: white;
 }
 
 .present {
   background-color: #ff6961;
-  color: white;
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
 }
 
 .saveBtn {
@@ -68,6 +78,10 @@ textarea{
   background-color: #06AED5;
   color: white;
   width: 10%;
+  background-image: url("../Images/save_icon.png");
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
 }
 
 .saveBtn i:hover {
