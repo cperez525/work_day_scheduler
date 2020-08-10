@@ -1,30 +1,55 @@
-var workHours = ["8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"]
+var workHours = ["8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm"]
+
+function renderTime() {
+    $("#currentDay").text(moment().format('dddd, MMM Do YYYY, LTS'))
+}
+renderTime()
+setInterval(renderTime,1000)
 
 for (h = 0; h < workHours.length; h++) {
 
     var blockRow = $("<article>").addClass("row")
     var hourBlock = $("<section>").addClass("hour")
     var hourText = $("<p>").addClass("hour-text")
-    var timeBlock = $("<textarea>").addClass("time-block past")
+    var timeBlock = $("<textarea>").addClass("time-block")
     var saveBtn = $("<button>").addClass("saveBtn")
 
-    console.log(workHours[h])
-    $(".container").append(blockRow)
-
     hourBlock.append(hourText.text(workHours[h]))
-
     blockRow.attr("data-log", workHours[h])
     timeBlock.attr("data-name", workHours[h])
 
+    if (moment(hourText.text(), "h a") < moment().format("h a")){
+
+        timeBlock.addClass("future")
+    }
+    else if (hourText.text() === moment().format("h a")){
+        timeBlock.addClass("present")
+    }
+    else {
+        timeBlock.addClass("past")
+    }
+
+    $(".container").append(blockRow)    
 
     blockRow.append(hourBlock, timeBlock, saveBtn)
 }
 
+function renderScheduledItems() {
+    for (var k = 0; k < localStorage.length; k++) {
+
+        var storedTime = localStorage.key(k)
+        var storedMessage = localStorage.getItem(storedTime)
+
+        console.log($("[data-name=storedTime]").attr("data-name"))        
+    }
+}
+
+renderScheduledItems()
 $(".saveBtn").on("click", function() {
-    
+
     var storeKey = $(this).prev().attr("data-name")
     var storeVal = $(this).prev().val()
-    
+
     console.log(storeKey, storeVal)
 
     localStorage.setItem(storeKey, storeVal)
