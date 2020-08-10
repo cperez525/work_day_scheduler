@@ -1,10 +1,29 @@
+var header = $(".lead")
+header.text("Hi, " + localStorage.getItem("username") + "!")
+
+function personalizeJumbotron() {    
+    if (header.text() === "" ||
+        header.text() === "Hi, null!") {
+        var userName = prompt("What's your name?")
+        localStorage.setItem("username", userName)
+    }
+}
+
+personalizeJumbotron()
+
+header.text("Hi, " + localStorage.getItem("username") + "!")
+
+
+
+
+
 // Setting all shown work hours within an array
 var workHours = ["8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm"]
 
 // Setting the current weekday for storage
 var currentDay = moment().format('dddd')
 
-var currentDtTime = $("<p>").addClass("headerTxt")
+var currentDtTime = $("<h2>").addClass("headerTxt")
 $("#currentDay").append(currentDtTime)
 
 // Writes current weekday, date, and time to page
