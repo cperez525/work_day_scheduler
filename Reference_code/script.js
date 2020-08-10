@@ -1,11 +1,11 @@
 var workHours = ["8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm"]
-var currentDay = moment().format('dddd')
+var currentDay = moment("8/11/2020").format('dddd')
 
 function renderTime() {
     $("#currentDay").text(moment().format('dddd, MMM Do YYYY, LTS'))
 }
 renderTime()
-setInterval(renderTime,1000)
+setInterval(renderTime, 1000)
 
 function captureCurrentDay() {
 
@@ -17,15 +17,13 @@ function checkCurrentDay() {
     var today = localStorage.getItem("today")
 
     if (today !== currentDay) {
-        console.log("Today is " + today + " and you got " + currentDay + ".")
-    }
-    else {
-        console.log("they match!")
+        localStorage.clear()
     }
 }
 
-captureCurrentDay()
 checkCurrentDay()
+captureCurrentDay()
+
 
 for (h = 0; h < workHours.length; h++) {
 
@@ -42,18 +40,18 @@ for (h = 0; h < workHours.length; h++) {
     var blockHour = moment("'" + hourText.text() + "'", "h a").startOf("hour").format("HH")
     var currentHour = moment().startOf("hour").format("HH")
 
-    if (blockHour > currentHour){
+    if (blockHour > currentHour) {
 
         timeBlock.addClass("future")
     }
-    else if (blockHour === currentHour){
+    else if (blockHour === currentHour) {
         timeBlock.addClass("present")
     }
-    else if(blockHour < currentHour){
+    else if (blockHour < currentHour) {
         timeBlock.addClass("past")
     }
 
-    $(".container").append(blockRow)    
+    $(".container").append(blockRow)
 
     blockRow.append(hourBlock, timeBlock, saveBtn)
 }
@@ -69,7 +67,7 @@ function renderScheduledItems() {
 }
 
 renderScheduledItems()
-$(".saveBtn").on("click", function() {
+$(".saveBtn").on("click", function () {
 
     var storeKey = $(this).prev().attr("data-name")
     var storeVal = $(this).prev().val()
