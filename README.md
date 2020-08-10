@@ -1,8 +1,8 @@
 Homework #4: Code Quiz by Cristino Perez (https://github.com/cperez525)
 
-Repository URL: https://github.com/cperez525/work_scheduler
+Repository URL: https://github.com/cperez525/work_day_scheduler
 
-Deployed App URL: 
+Deployed App URL: https://cperez525.github.io/work_day_scheduler/
 
 Screenshots:
 
