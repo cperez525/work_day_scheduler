@@ -18,7 +18,7 @@ for (h = 0; h < workHours.length; h++) {
     blockRow.attr("data-log", workHours[h])
     timeBlock.attr("data-name", workHours[h])
 
-    if (moment(hourText.text(), "h a") < moment().format("h a")){
+    if (hourText.text > moment().format("h a")){
 
         timeBlock.addClass("future")
     }
@@ -40,7 +40,7 @@ function renderScheduledItems() {
         var storedTime = localStorage.key(k)
         var storedMessage = localStorage.getItem(storedTime)
 
-        console.log($("[data-name=storedTime]").attr("data-name"))        
+        $("[data-name='" + storedTime + "']").text(storedMessage)
     }
 }
 
