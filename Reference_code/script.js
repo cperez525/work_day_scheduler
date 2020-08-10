@@ -1,3 +1,4 @@
+// Write username in localstorage to header, and get one and write the obtained username if one doesn't exist
 var header = $(".lead")
 header.text("Hi, " + localStorage.getItem("username") + "!")
 
