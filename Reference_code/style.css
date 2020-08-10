@@ -1,9 +1,12 @@
+/* General body styling */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: black;
 }
 
+/* Styling for text area where user will input */
 textarea{
   background: transparent;
   border: none;
@@ -11,68 +14,76 @@ textarea{
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  text-emphasis: 900;
 }
 
+/* jumbo tron styling where current date and time will also display */
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: white;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 2px solid rgb(104, 102, 102);
 }
 
 .description{
   white-space: pre-wrap;
 }
 
+/* styling for area containing the text area where user will input */
 .time-block{
   text-align: center;
   width: 80%;
-  border: 1px solid black;
+  border: 1px solid rgb(104, 102, 102);
 }
 
+/* styling for row that contains hour block, time block, and save button */
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;
+  border-top: 1px solid rgb(104, 102, 102);
   margin-bottom: .6%;
   justify-content: center;
 }
 
+/* styling for hour block */
 .hour {
   text-align: center;
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
+  background-color: black;
+  color: white;
+  border: 1px solidrgb(104, 102, 102);
   width: 10%;
   overflow-wrap: break-word;
 }
 
+/* styling for text within hour black */
 .hour-text {
   margin-top: 30%;
   margin-bottom: 30%;
   font-weight: 900;
 }
 
+/* universal styling for past, present and future classes */
 .past, .present, .future {
   color: white;
-  text-emphasis: 900;
 }
 
+/* Background coloring so we know which blocks are past, present, and future */
 .past {
-  background-color: #d3d3d3;
+  background-color: #d3d3d38c;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #cc5c56;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #78e2787e;
 }
 
+/* Save button styling */
 .saveBtn {
-  border-left: 1px solid black;
+  border-left: 1px solid rgb(104, 102, 102);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
