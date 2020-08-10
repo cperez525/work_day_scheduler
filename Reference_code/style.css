@@ -30,6 +30,10 @@ textarea{
   white-space: pre-wrap;
 }
 
+.headerTxt {
+  margin-top: 3px;
+}
+
 /* styling for area containing the text area where user will input */
 .time-block{
   text-align: center;

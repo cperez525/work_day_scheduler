@@ -4,9 +4,14 @@ var workHours = ["8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 p
 // Setting the current weekday for storage
 var currentDay = moment().format('dddd')
 
+var currentDtTime = $("<p>").addClass("headerTxt")
+$("#currentDay").append(currentDtTime)
+
 // Writes current weekday, date, and time to page
 function renderTime() {
-    $("#currentDay").text(moment().format('dddd, MMM Do YYYY, LTS'))
+
+    currentDtTime.text(moment().format('dddd, MMM Do YYYY, LTS'))
+    $("#currentDay").append(currentDtTime)
 }
 renderTime()
 
