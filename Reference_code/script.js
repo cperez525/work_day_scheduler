@@ -18,14 +18,17 @@ for (h = 0; h < workHours.length; h++) {
     blockRow.attr("data-log", workHours[h])
     timeBlock.attr("data-name", workHours[h])
 
-    if (hourText.text > moment().format("h a")){
+    var blockHour = moment("'" + hourText.text() + "'", "h a").startOf("hour").format("HH")
+    var currentHour = moment().startOf("hour").format("HH")
+
+    if (blockHour > currentHour){
 
         timeBlock.addClass("future")
     }
-    else if (hourText.text() === moment().format("h a")){
+    else if (blockHour === currentHour){
         timeBlock.addClass("present")
     }
-    else {
+    else if(blockHour < currentHour){
         timeBlock.addClass("past")
     }
 
